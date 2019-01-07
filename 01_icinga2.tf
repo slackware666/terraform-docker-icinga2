@@ -1,4 +1,5 @@
 variable "local_files_path" {}
+variable "icinga2" { type = "map" }
 
 resource "docker_image" "icinga2" {
   name = "jordan/icinga2"
@@ -10,8 +11,8 @@ resource "docker_container" "icinga2" {
   restart = "always"
 
   ports = {
-    internal = 80
-    external = 8080
+    internal = "${var.icinga2["port_internal"]}"
+    external = "${var.icinga2["port_external"]}"
   }
 
   env = [
