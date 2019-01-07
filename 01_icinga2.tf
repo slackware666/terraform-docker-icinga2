@@ -56,4 +56,17 @@ resource "docker_container" "icinga2" {
     host_path      = "${var.local_files_path}/var_lib_php_sessions"
     container_path = "/var/lib/php/sessions/"
   }
+  volumes = {
+    host_path      = "${var.local_files_path}/etc_icinga2/conf.d/hostgroups.conf"
+    container_path = "/etc/icinga2/conf.d/hostgroups.conf"
+  }
+  volumes = {
+    host_path      = "${var.local_files_path}/etc_icinga2/conf.d/hosts.conf"
+    container_path = "/etc/icinga2/conf.d/hosts.conf"
+  }
+  volumes = {
+    host_path      = "${var.local_files_path}/etc_icinga2/conf.d/services.conf"
+    container_path = "/etc/icinga2/conf.d/services.conf"
+  }
+
 }
