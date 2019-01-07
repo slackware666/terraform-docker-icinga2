@@ -6,9 +6,10 @@ resource "docker_image" "icinga2" {
 }
 
 resource "docker_container" "icinga2" {
-  name    = "icinga2"
-  image   = "${docker_image.icinga2.name}"
-  restart = "always"
+  name     = "icinga2"
+  hostname = "${var.icinga2["hostname"]}"
+  image    = "${docker_image.icinga2.name}"
+  restart  = "always"
 
   ports = {
     internal = "${var.icinga2["port_internal"]}"
