@@ -1,7 +1,7 @@
 variable "icinga2" { type = "map" }
 
 resource "docker_image" "icinga2" {
-  name = "jordan/icinga2"
+  name = "${var.icinga2["image"]}"
 }
 
 resource "docker_container" "icinga2" {
