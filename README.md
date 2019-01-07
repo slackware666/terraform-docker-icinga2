@@ -36,13 +36,21 @@ $ touch files/etc_icinga2/conf.d/hosts.conf
 $ touch files/etc_icinga2/conf.d/services.conf
 ```
 
-Fire up terraform 
+Fire up terraform
 
 ```
 $ terraform init
 $ terraform plan
 $ terraform apply
 ```
+
+or if you prefer the classic way
+
+```
+$ ./run.sh
+```
+
+This will simply run the Docker container with the appropriate ENV, EXPOSE and VOLUME settings.
 
 # Configuration
 
@@ -55,5 +63,7 @@ These configuration files can be modified:
 After modifying these files, restart the Docker container:
 
 ```
+$ terraform apply
+# OR
 $ docker restart icinga2
 ```
