@@ -3,6 +3,8 @@ NAME="icinga2"
 IMAGE="jordan/icinga2"
 THIS_DIR=$(cd `dirname $bash_source[0]`; pwd -P)
 
+./preinstall.sh
+
 docker run -d --name icinga2 -p 8080:80 \
   -v $THIS_DIR/files/etc_apache_ssl:/etc/apache2/ssl \
   -v $THIS_DIR/files/etc_icinga2:/etc/icinga2 \
