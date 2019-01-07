@@ -4,6 +4,12 @@ Install Icinga2 in a Docker container.
 
 See https://hub.docker.com/r/jordan/icinga2 for more details.
 
+# Prerequisites
+
+```
+$ brew install terraform
+```
+
 # Bind mount dirs
 
 * files/etc_apache_ssl -> /etc/apache2/ssl
